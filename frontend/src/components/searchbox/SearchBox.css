@@ -1,0 +1,56 @@
+.bd-search-results {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    font-size: 0.9rem;
+    background-color: white;
+    max-height: 200px;
+    z-index: 100;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 0.5px solid rgba(100, 100, 100, 0.6);
+    overflow-y: auto;
+  }
+
+  .my_form{
+      position: relative;
+  }
+
+  .my_input{
+      height: 40px;
+  }
+
+  .user_avatar{
+      width: 40px;
+      height: 40px;
+  }
+
+  .my-auto{
+    font-weight: bold;
+    font-size: 1em;
+    
+  }
+  .my_hash{
+    color: rgb(100, 100, 100,0.6);
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .hover_div{
+    cursor: pointer;
+    border-bottom: 0.5px solid rgba(100, 100, 100, 0.6);
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  .hover_div:hover{
+    opacity: 0.8;
+  }
+
+  
+  .num_div{
+    color: rgb(100, 100, 100,0.6);
+  }

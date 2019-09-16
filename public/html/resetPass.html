@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Change your password</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#password1').tooltip({ 'trigger': 'focus', 'title': '5 or more chars' });
+
+            $("#password1").keyup(function () {
+                checkPasswords();
+            });
+            $("#password2").keyup(function () {
+                checkPasswords();
+            });
+
+            $("#submitBtn").click(function () {
+                var password = $("#password1").val();
+                var token = getToken();
+                console.error(window.location.origin);
+                //ajax put request to server
+                $.ajax({
+                    type: "PUT",
+                    url: window.location.origin + "/users/reset/" + token,
+                    contentType: 'application/json',
+                    data: JSON.stringify({ newPassword: password }),
+                    success: function (response) {
+                        updateGUI(response.message);
+
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+
+                        updateGUI(jqXHR.responseJSON.message);
+                    },
+                });
+            });
+
+        });
+
+        function checkPasswords() {
+            var password1 = $("#password1").val();
+            var password2 = $("#password2").val();
+            if (password1.length > 4 && password1 == password2)
+                $("#submitBtn").attr("disabled", false);
+            else
+                $("#submitBtn").attr("disabled", true);
+        }
+
+        function getToken() {
+            var url_string = window.location;
+            var url = new URL(url_string);
+            var token = url.searchParams.get("token");
+            return token;
+        }
+
+        function updateGUI(message) {
+            $('.preState').hide();
+            $("#titleText").text(message);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="text-center" id="titleText">Change Password</h1>
+            </div>
+        </div>
+        <div class="row preState">
+            <div class="col-sm-6 col-sm-offset-3">
+
+
+                <input type="password" class="input-lg form-control" name="password1" id="password1"
+                    placeholder="New Password" autocomplete="off" style="margin-bottom: 30px;">
+
+                <input type="password" class="input-lg form-control" name="password2" id="password2"
+                    placeholder="Repeat Password" autocomplete="off" style="margin-bottom: 30px;">
+                <input type="button" class="col-xs-12 btn btn-primary btn-load btn-lg"
+                    data-loading-text="Changing Password..." value="Change Password" id="submitBtn" disabled=true>
+
+            </div>
+            <!--/col-sm-6-->
+        </div>
+        <!--/row-->
+    </div>
+</body>
+
+</html>
+
+
+<!------ Include the above in your HEAD tag ---------->

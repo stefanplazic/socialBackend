@@ -1,0 +1,10 @@
+.some{
+	background-color: blue !important;
+	background-image: linear-gradient(to bottom right, blue, purple) !important;
+
+}
+
+hover_div{
+	cursor: pointer;
+}
+

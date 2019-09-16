@@ -1,0 +1,29 @@
+.square{
+	
+	width: 100%;
+	height: calc(100vw/4);
+	cursor: pointer;
+	object-fit: fill;
+	background-color: black;
+	
+	
+
+}
+
+.square:hover{
+	opacity: 0.76;
+}
+
+
+@media only screen and (max-width: 576px) {
+	.square{
+	
+		width: 100%;
+		height: calc(100vw/1.5);
+		cursor: pointer;
+		object-fit: fill;
+		background-color: black;
+		
+	
+	}
+  }

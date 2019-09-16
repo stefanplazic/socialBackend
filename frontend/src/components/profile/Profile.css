@@ -1,0 +1,28 @@
+
+
+   body
+   {
+       font-family: 'Open Sans', sans-serif;
+   }
+   
+   .img_cls{
+       width: 100px;
+       height: auto;
+       max-width: 100px;
+       max-height: 100px;
+   }
+
+   .follow_div{
+       cursor: pointer;
+   }
+
+   .user_avatar{
+       cursor: pointer;
+   }
+   .user_avatar:hover{
+    opacity: 0.6;
+   }
+
+   .custom_margin_top{
+       margin-top:2px; 
+   }

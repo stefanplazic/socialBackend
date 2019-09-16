@@ -1,0 +1,38 @@
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+  
+    overflow-y: auto;
+}
+
+.user_av{
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+.titlespan{
+    margin-left: 40px;
+}
+.liked{
+    color: red;
+    cursor: pointer;
+}
+.not_liked{
+    color:gray;
+}
+.not_liked:hover{
+    color:red;
+    cursor: pointer;
+}
+.like_num{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.video_holder{
+    margin-bottom: 10px;
+}
+
+.word_my{
+    word-break: break-word;
+}

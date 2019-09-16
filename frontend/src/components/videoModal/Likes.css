@@ -1,0 +1,13 @@
+.likes_div{
+    max-height: 30vh;
+    overflow-y: auto;
+    
+}
+.avatar_img{
+    width: 50px;
+    height: 50px;
+}
+.borderd_div{
+    padding-top: calc(25px - 0.7em);
+}
+
