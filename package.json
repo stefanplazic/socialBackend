@@ -38,7 +38,7 @@
     "redis": "^2.8.0",
     "socket.io": "^2.2.0",
     "swagger-ui-express": "^4.0.2",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.11"
